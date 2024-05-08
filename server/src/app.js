@@ -9,10 +9,11 @@ const config = require('./config/config')
 const app = express()
 app.use(morgan('combined'))
 app.use(cors({
-  origin: 'http://localhost:5174'
+  origin: 'http://localhost:5173'
 }))
 app.use(bodyParser.json())
 
 require('./routes')(app)
 
 app.listen(config.port)
+console.log(`Server started on port ${config.port}`)

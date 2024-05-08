@@ -115,6 +115,8 @@ export default {
     return {
       email: "",
       password: "",
+      firstName: "",
+      lastName: "",
     };
   },
   methods: {
