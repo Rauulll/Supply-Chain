@@ -1,12 +1,12 @@
-const config = require('../config/config')
 const mysql = require('mysql2')
 const bycrypt = require('bcryptjs')
+require('dotenv').config()
 
 const db = mysql.createConnection({
-  host: config.db.host,
-  database: config.db.database,
-  user: config.db.user,
-  password: config.db.password
+  host: process.env.mysql_host,
+  database: process.env.mysql_database,
+  user: process.env.mysql_user,
+  password: process.env.mysql_password
 }).promise()
 
 db.connect()
