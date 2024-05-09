@@ -1,6 +1,6 @@
 const config = require('../config/config')
 const mysql = require('mysql2')
-// const bycrypt = require('bcryptjs')
+const bycrypt = require('bcryptjs')
 
 const db = mysql.createConnection({
   host: config.db.host,
@@ -9,29 +9,26 @@ const db = mysql.createConnection({
   password: config.db.password
 }).promise()
 
-db.connect((err) => {
-  if (err) {
-    console.error('error connecting: ' + err.stack)
-    return
+db.connect()
+  .then(() => {
+    console.log('connected to database')
+  })
+
+async function createUser (email, password, firstName, lastName) {
+  // hashing user password.
+  const salt = await bycrypt.genSalt(10)
+  const hashPassword = await bycrypt.hash(password, salt)
+  try {
+    await db.query(
+      'INSERT INTO Users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
+      [firstName, lastName, email, hashPassword]
+    )
+  } catch (err) {
+    const errorMessage = err.code === 'ER_DUP_ENTRY'
+      ? 'Email already exists'
+      : err.message
+    throw new Error(errorMessage)
   }
-  console.log('connected to database')
-})
+}
 
-// async function createUser (email, password, firstName, lastName) {
-//   // hashing user password.
-//   const salt = await bycrypt.genSalt(10)
-//   const hashPassword = await bycrypt.hash(password, salt)
-//   try {
-//     await db.query(
-//       'INSERT INTO User (firstName, lastName, email, password) VALUES (?, ?, ?, ?)',
-//       [firstName, lastName, email, hashPassword]
-//     )
-//   } catch (err) {
-//     const errorMessage = err.code === 'ER_DUP_ENTRY'
-//       ? 'Email already exists'
-//       : err.message
-//     throw new Error(errorMessage)
-//   }
-// }
-
-// module.exports = { createUser }
+module.exports = { createUser }
