@@ -8,6 +8,7 @@ module.exports = {
       res.send({ message: `${req.body.email}! registered successfully` })
     } catch (err) {
       res.status(400).send({ error: err.message })
+      console.log(err)
     }
   }
 }

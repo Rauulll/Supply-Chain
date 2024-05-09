@@ -71,7 +71,7 @@
               </div>
               <!-- /.col -->
               <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block" @click="signUp">
+                <button type="button" class="btn btn-primary btn-block" @click="signUp">
                   Sign Up
                 </button>
               </div>
@@ -121,13 +121,17 @@ export default {
   },
   methods: {
     async signUp() {
-      const response = await AuthenticationService.register({
-        firstName: this.firstName,
-        lastName: this.lastName,
-        email: this.email,
-        password: this.password,
-      });
-      console.log(response.data);
+      try {
+        const response = await AuthenticationService.register({
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+        });
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
