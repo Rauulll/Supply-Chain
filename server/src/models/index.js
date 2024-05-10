@@ -1,6 +1,6 @@
+require('dotenv').config()
 const mysql = require('mysql2')
 const bycrypt = require('bcryptjs')
-require('dotenv').config()
 
 const db = mysql.createConnection({
   host: process.env.mysql_host,
