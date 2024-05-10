@@ -1,6 +1,8 @@
-const AuthenticationController = require('./controllers/AuthenticationController')
+const userController = require('./controllers/userController')
+const userControllerPolicy = require('./policy/userControllerPolicy')
 
 module.exports = (app) => {
   app.post('/signup',
-    AuthenticationController.register)
+    userControllerPolicy.register,
+    userController.register)
 }
