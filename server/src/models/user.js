@@ -1,4 +1,4 @@
-const { DataTypes } = require('mysql2')
+const { DataTypes } = require('sequelize')
 
 const UserShema = {
   id: {

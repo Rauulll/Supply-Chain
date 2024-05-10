@@ -1,5 +1,5 @@
-// const { User } = require('../models/user')
 const { createUser } = require('../models/index')
+// const { User } = require('../models/user')
 
 module.exports = {
   async register (req, res) {
