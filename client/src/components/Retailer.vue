@@ -9,7 +9,10 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Dashboard/Retailer/Create Retailer</a></li>
+                        <li class="breadcrumb-item">
+                            <router-link to="/">Dashboard</router-link>/
+                            <router-link to="/retailer">Retailer</router-link>
+                        </li>
                     </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

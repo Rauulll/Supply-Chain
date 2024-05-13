@@ -10,7 +10,9 @@
             <!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item">
+                  <router-link to="/">Home</router-link>
+                </li>
               </ol>
             </div>
             <!-- /.col -->
