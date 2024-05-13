@@ -61,16 +61,18 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-box"></i>
-                        <p>Product</p>
-                    </a>
+                        <a class="nav-link" @click="$emit('section-change', 'create-product')">
+                            <i class="fas fa-box"></i>
+                            &nbsp;
+                            <p>Product</p>
+                        </a>
                     </li>
                     <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-boxes"></i>
-                        <p>Batch</p>
-                    </a>
+                        <a class="nav-link" @click="$emit('section-change', 'create-batch')">
+                            <i class="fas fa-boxes"></i>
+                            &nbsp;
+                            <p>Batch</p>
+                        </a>
                     </li>
                 </ul>
                 </li>
@@ -98,6 +100,12 @@
     </aside>
 </template>
 
-<script setup>
-
+<script>
+export default {
+  props: {
+    activeSection: String,
+  },
+  emits: ['section-change'],
+};
 </script>
+

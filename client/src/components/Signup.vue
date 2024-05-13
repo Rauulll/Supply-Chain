@@ -128,7 +128,7 @@ export default {
           email: this.email,
           password: this.password,
         });
-        console.log(response.data);
+        this.error = error.response.data.erro;
       } catch (error) {
         console.log(error);
       }

@@ -6,6 +6,7 @@ import AdminSidePanel from '../components/PageLayout/AdminSidePanel.vue'
 <template>
   <main>
     <AdminSidePanel />
+      <header />
         <Retailer />
   </main>
 </template>

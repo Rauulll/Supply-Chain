@@ -10,7 +10,8 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a href="#">Dashboard/Products/<b>Create Product</b></a>
+                <router-link to="/">Dashboard</router-link>/
+                <!-- <router-link to="/products">Products</router-link> -->
               </li>
             </ol>
           </div>
@@ -71,5 +72,3 @@
     </section>
   </div>
 </template>
-
-<script setup></script>
