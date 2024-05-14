@@ -44,7 +44,6 @@
           </div>
         </div>
       </div>
-      
       <div class="container-fluid">
         <div class="card card-info">
           <!-- from start -->
@@ -81,7 +80,7 @@
                 >
                 <div class="col-sm-10">
                   <input
-                    type="interger"
+                    type="date"
                     class="form-control"
                     id="batchExpiry"
                     placeholder="Batch Expiry Date"
@@ -94,7 +93,7 @@
                 >
                 <div class="col-sm-10">
                   <input
-                    type="interger"
+                    type="number"
                     class="form-control"
                     id="batchQuantity"
                     placeholder="Batch Quantity"

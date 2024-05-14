@@ -8,7 +8,6 @@
                 <a href="#" class="d-block">BLOCKPHARMA</a>
             </div>
             </div>
-        
             <!-- SidebarSearch Form -->
             <div class="form-inline">
             <!-- <div class="input-group" data-widget="sidebar-search">
@@ -20,7 +19,6 @@
                 </div>
             </div> -->
             </div>
-        
             <!-- Sidebar Menu -->
             <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -103,9 +101,8 @@
 <script>
 export default {
   props: {
-    activeSection: String,
+    activeSection: String
   },
-  emits: ['section-change'],
-};
+  emits: ['section-change']
+}
 </script>
-

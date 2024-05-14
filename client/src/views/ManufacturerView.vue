@@ -7,15 +7,15 @@ export default {
   components: {
     ManufacturerSidePanel,
     CreateBatch,
-    CreateProduct,
+    CreateProduct
   },
-  data() {
+  data () {
     return {
-      activeSection: 'create-batch',
+      activeSection: 'create-batch'
     }
   },
   methods: {
-    handleSectionChange(newSection) {
+    handleSectionChange (newSection) {
       this.activeSection = newSection
     }
   }
