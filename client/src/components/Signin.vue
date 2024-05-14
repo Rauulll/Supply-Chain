@@ -55,7 +55,7 @@
             <a href="#">I forgot my password</a>
           </p>
           <p class="mb-0">
-            <router-link to="/signup">Register for an Account</router-link>
+            <router-link to="/signup" class="text-center">Register for an Account</router-link>
           </p>
         </div>
         <!-- /.login-card-body -->

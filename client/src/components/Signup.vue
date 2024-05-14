@@ -62,6 +62,8 @@
                 </div>
               </div>
             </div>
+            <div class="error" v-html='errorMessage'>
+            </div>
             <div class="row">
               <div class="col-8">
                 <div class="icheck-primary">
@@ -99,7 +101,7 @@
           <!-- /.social-auth-links -->
 
           <p class="mb-0">
-            <a href="/signin" class="text-center">I already have an account</a>
+            <router-link to="/signin" class="text-center">I already have an account</router-link>
           </p>
         </div>
         <!-- /.login-card-body -->
@@ -116,21 +118,21 @@ export default {
       email: '',
       password: '',
       firstName: '',
-      lastName: ''
+      lastName: '',
+      errorMessage: ''
     }
   },
   methods: {
     async signUp () {
       try {
-        const response = await AuthenticationService.register({
+        await AuthenticationService.register({
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,
           password: this.password
         })
-        console.log(response)
       } catch (error) {
-        console.log(error)
+        this.errorMessage = error.response.data.error
       }
     }
   }
@@ -143,5 +145,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 </style>
