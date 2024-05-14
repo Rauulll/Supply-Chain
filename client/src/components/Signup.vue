@@ -109,32 +109,32 @@
 </template>
 
 <script>
-import AuthenticationService from "../services/AuthenticationService";
+import AuthenticationService from '../services/AuthenticationService'
 export default {
-  data() {
+  data () {
     return {
-      email: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-    };
+      email: '',
+      password: '',
+      firstName: '',
+      lastName: ''
+    }
   },
   methods: {
-    async signUp() {
+    async signUp () {
       try {
         const response = await AuthenticationService.register({
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,
-          password: this.password,
-        });
-        this.error = error.response.data.erro;
+          password: this.password
+        })
+        console.log(response)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -1,4 +1,4 @@
-<template>  
+<template>
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
@@ -8,7 +8,6 @@
       <div class="card">
         <div class="card-body login-card-body">
           <p class="login-box-msg">Sign in to start your session</p>
-    
           <form action="#" method="post">
             <div class="input-group mb-3">
               <input type="email" class="form-control" placeholder="Email">
@@ -42,7 +41,6 @@
               <!-- /.col -->
             </div>
           </form>
-    
           <div class="social-auth-links text-center mb-3">
             <p>- OR -</p>
             <a href="#" class="btn btn-block btn-primary">
@@ -53,12 +51,11 @@
             </a>
           </div>
           <!-- /.social-auth-links -->
-    
           <p class="mb-1">
-            <a href="forgot-password.html">I forgot my password</a>
+            <a href="#">I forgot my password</a>
           </p>
           <p class="mb-0">
-            <a href="/signup" class="text-center">Register a new membership</a>
+            <router-link to="/signup">Register for an Account</router-link>
           </p>
         </div>
         <!-- /.login-card-body -->
@@ -72,7 +69,7 @@ import AuthenticationService from '../services/AuthenticationService'
 export default {
   methods: {
     async signIn () {
-      const response = await AuthenticationService.signIn({
+      await AuthenticationService.signIn({
         email: this.email,
         password: this.password
       })
