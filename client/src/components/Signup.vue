@@ -119,7 +119,7 @@ export default {
       password: '',
       firstName: '',
       lastName: '',
-      errorMessage: ''
+      errorMessage: null
     }
   },
   methods: {
