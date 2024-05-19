@@ -92,7 +92,7 @@
                     <!-- /.card-body -->
                     <div class="card-footer">
                         <button type="submit" class="btn btn-default float-right">Back</button>
-                        <button type="submit" class="btn btn-info">Save</button>                        
+                        <button type="submit" class="btn btn-info">Save</button>
                     </div>
                     <!-- /.card-footer -->
                     </form>

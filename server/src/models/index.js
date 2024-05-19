@@ -1,6 +1,6 @@
 require('dotenv').config()
 const mysql = require('mysql2')
-const bycrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs')
 
 const db = mysql.createConnection({
   host: process.env.mysql_host,
@@ -16,19 +16,37 @@ db.connect()
 
 async function createUser (email, password, firstName, lastName) {
   // hashing user password.
-  const salt = await bycrypt.genSalt(10)
-  const hashPassword = await bycrypt.hash(password, salt)
+  const salt = await bcrypt.genSalt(10)
+  const hashPassword = await bcrypt.hash(password, salt)
   try {
     await db.query(
       'INSERT INTO Users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
       [firstName, lastName, email, hashPassword]
     )
   } catch (err) {
-    const errorMessage = err.code === 'ER_DUP_ENTRY'
-      ? 'Email already exists'
-      : err.message
+    const errorMessage = 'Email already exists'
     throw new Error(errorMessage)
   }
 }
 
-module.exports = { createUser }
+async function findUsers (email, password, res) {
+  try {
+    const sql = 'SELECT * FROM Users WHERE email = ?'
+    const [Users] = await db.query(sql, [email])
+    const user = Users[0]
+    if (!user) {
+      res.status(403).send({ error: 'User does not exist' })
+    } else {
+      const isPasswordValid = await bcrypt.compare(password, user.password)
+      if (isPasswordValid) {
+        res.send({ message: 'Welcome Back!' })
+      } else {
+        res.status(403).send({ error: 'Invalid password' })
+      }
+    }
+  } catch (err) {
+    res.status(400).send({ error: err.message })
+  }
+}
+
+module.exports = { createUser, findUsers }

@@ -2,12 +2,12 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <p>Sign In</p>
+        <p>Sign In BlockPharma</p>
       </div>
       <!-- /.login-logo -->
       <div class="card">
         <div class="card-body login-card-body">
-          <p class="login-box-msg">Sign in to start your session</p>
+          <p class="login-box-msg">Sign in to start your account</p>
           <form action="#" method="post">
             <div class="input-group mb-3">
               <input type="email" class="form-control" v-model="email" placeholder="Email">
