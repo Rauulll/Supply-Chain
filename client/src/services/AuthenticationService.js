@@ -6,5 +6,11 @@ export default {
   },
   signIn (credentials) {
     return Api().post('signin', credentials)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }

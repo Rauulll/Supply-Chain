@@ -33,6 +33,7 @@
                     class="form-control"
                     id="productName"
                     placeholder="Product Name"
+                    v-model="productName"
                   />
                 </div>
               </div>
@@ -41,7 +42,7 @@
                   >Product Registration Code</label
                 >
                 <div class="col-sm-10">
-                  <input type="interger" class="form-control" id="productRegCode" />
+                  <input type="interger" class="form-control" id="productRegCode" v-model="productRegCode"/>
                 </div>
               </div>
               <div class="form-group row">
@@ -54,13 +55,14 @@
                     class="form-control"
                     id="productInformation"
                     placeholder="Product Information"
+                    v-model="productInformation"
                   />
                 </div>
               </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-              <button type="submit" class="btn btn-info">Save</button>
+              <button type="submit" class="btn btn-info" @click="createProduct">Save</button>
               <button type="submit" class="btn btn-default float-right">Cancel</button>
             </div>
             <!-- /.card-footer -->
@@ -72,3 +74,34 @@
     </section>
   </div>
 </template>
+
+<script>
+import ManufacturerService from '../../services/ManufacturerService.js'
+export default {
+  data () {
+    return {
+      productName: '',
+      productRegCode: '',
+      productInformation: ''
+    }
+  },
+  methods: {
+    async createProduct () {
+      try {
+        await ManufacturerService.createProduct({
+          productName: this.productName,
+          productRegCode: this.productRegCode,
+          productInformation: this.productInformation
+        })
+        this.$router.push({ name: 'products' })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

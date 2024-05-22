@@ -32,7 +32,7 @@
                     </p>
                 </a>
                 </li>
-                <li>
+                <li class="mb-4">
                 <a href="/" class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
@@ -40,14 +40,14 @@
                     </p>
                 </a>
                 </li>
-                <li class="mb-4">
+                <!-- <li class="mb-4">
                 <a href="#" class="nav-link">
                     <i class="nav icon ion ion-building"></i>
                     <p>
                     Company profile
                     </p>
                 </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-globe"></i>
@@ -57,7 +57,7 @@
                     <span class="badge badge-info right"></span>
                     </p>
                 </a>
-                <ul class="nav nav-treeview">
+                <ul class="nav nav-treeview ml-2">
                     <li class="nav-item">
                         <a class="nav-link" @click="$emit('section-change', 'create-product')">
                             <i class="fas fa-box"></i>
