@@ -1,19 +1,7 @@
 require('dotenv').config()
-const mysql = require('mysql2')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-
-const db = mysql.createConnection({
-  host: process.env.mysql_host,
-  database: process.env.mysql_database,
-  user: process.env.mysql_user,
-  password: process.env.mysql_password
-}).promise()
-
-db.connect()
-  .then(() => {
-    console.log('connected to database')
-  })
+const db = require('../config/Database')
 
 async function createUser (email, password, firstName, lastName) {
   // hashing user password.
@@ -26,12 +14,9 @@ async function createUser (email, password, firstName, lastName) {
       [firstName, lastName, email, hashPassword]
     )
     // create a token for the user
-    const token = jwt.sign({
-      email
-    },
-    process.env.jwt_secret, { expiresIn: '1800' }
+    return jwt.sign({ email },
+      process.env.jwt_secret, { expiresIn: '1800' }
     )
-    return token
   } catch (err) {
     const errorMessage = 'Email already exists'
     throw new Error(errorMessage)
@@ -40,6 +25,7 @@ async function createUser (email, password, firstName, lastName) {
 
 async function findUsers (email, password, res) {
   try {
+    // find user in database
     const sql = 'SELECT * FROM Users WHERE email = ?'
     const [Users] = await db.query(sql, [email])
     const user = Users[0]
@@ -49,6 +35,7 @@ async function findUsers (email, password, res) {
     if (user) {
       const isPasswordValid = await bcrypt.compare(password, user.password)
       if (isPasswordValid) {
+        // create a token for the user
         let token
         try {
           token = jwt.sign(
@@ -59,8 +46,7 @@ async function findUsers (email, password, res) {
             process.env.jwt_secret, { expiresIn: '1h' }
           )
           res.status(200).json({
-            data: token,
-            message: 'Welcome Back!'
+            token
           })
           return token
         } catch (error) {

@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize')
 
-const UserShema = {
+const UserSchema = {
   id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
@@ -31,4 +31,4 @@ const UserShema = {
   }
 }
 
-module.exports = { UserShema }
+module.exports = { UserShema: UserSchema }

@@ -1,4 +1,4 @@
-const { createUser, findUsers } = require('../models/index')
+const { createUser, findUsers } = require('../models/UserIndex')
 
 module.exports = {
   async register (req, res) {
