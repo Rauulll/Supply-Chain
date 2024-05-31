@@ -17,6 +17,9 @@ const authMiddleware = (req, res, next) => {
     // Attach the decoded user information to the request object
     req.user = decoded.user
 
+    // Attach the user role to the response object
+    res.locals.userRole = decoded.user
+
     // Call the next middleware or route handler
   } catch (error) {
     console.log('JWT verify error:', error.message)

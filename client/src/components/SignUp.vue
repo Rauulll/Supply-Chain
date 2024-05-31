@@ -131,6 +131,9 @@ export default {
           email: this.email,
           password: this.password
         })
+          .then(response => {
+            localStorage.setItem('token', response.data.token)
+          })
       } catch (error) {
         this.errorMessage = error.response.data.error
       }

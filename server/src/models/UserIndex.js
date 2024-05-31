@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const db = require('../config/Database')
 
-async function createUser (email, password, firstName, lastName) {
+async function createUser (email, password, firstName, lastName, res) {
   // hashing user password.
   const salt = await bcrypt.genSalt(10)
   const hashPassword = await bcrypt.hash(password, salt)
@@ -14,9 +14,23 @@ async function createUser (email, password, firstName, lastName) {
       [firstName, lastName, email, hashPassword]
     )
     // create a token for the user
-    return jwt.sign({ email },
-      process.env.jwt_secret, { expiresIn: '1800' }
-    )
+    let token
+    try {
+      token = jwt.sign(
+        {
+          emailId: email,
+          password: hashPassword,
+          firstName,
+          lastName
+        },
+        process.env.jwt_secret, { expiresIn: '364d' }
+      )
+      res.status(200).json({
+        token
+      })
+    } catch (error) {
+      console.log(error)
+    }
   } catch (err) {
     const errorMessage = 'Email already exists'
     throw new Error(errorMessage)
@@ -41,9 +55,10 @@ async function findUsers (email, password, res) {
           token = jwt.sign(
             {
               userId: user.id,
-              email: user.email
+              email: user.email,
+              role: user.role
             },
-            process.env.jwt_secret, { expiresIn: '1h' }
+            process.env.jwt_secret, { expiresIn: '364d' }
           )
           res.status(200).json({
             token
