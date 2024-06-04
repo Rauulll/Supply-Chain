@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Signup from '../components/Signup.vue'
-import Signin from '../components/Signin.vue'
+import Signup from '../components/SignUp.vue'
+import Signin from '../components/SignIn.vue'
 import DashboardView from '../views/DashboardView.vue'
 import RetailerView from '../views/RetailerView.vue'
 import Manufacturer from '../views/ManufacturerView.vue'
