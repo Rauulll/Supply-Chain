@@ -63,7 +63,7 @@ async function findUsers (email, password, res) {
           res.status(200).json({
             token
           })
-          return token
+          return { token }
         } catch (error) {
           console.log(error)
         }

@@ -13,19 +13,13 @@ const authMiddleware = (req, res, next) => {
   try {
     // Verify the token
     const decoded = jwt.verify(token, process.env.jwt_secret)
+    console.log('Decoded:', decoded)
 
-    // Attach the decoded user information to the request object
-    req.user = decoded.user
-
-    // Attach the user role to the response object
-    res.locals.userRole = decoded.user
-
-    // Call the next middleware or route handler
+    next()
   } catch (error) {
     console.log('JWT verify error:', error.message)
-    return res.status(403).json({ message: 'Unauthorized' })
+    return res.status(403).json({ message: 'FORBIDDEN' })
   }
-  return next()
 }
 
 module.exports = authMiddleware
