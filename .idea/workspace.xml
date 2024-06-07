@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28f83587-ec6b-47d1-adca-f83170618c31" name="Changes" comment="initializing jwt">
-      <change afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Signin.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Signup.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Signup.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/middleware/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/UserIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/UserIndex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,25 +67,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "manufacturer",
-    "last_opened_file_path": "/home/raul/Environment/Vue/Supply-Chain/client/package.json",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.client.executor": "Run",
-    "npm.lint.executor": "Run",
-    "npm.server.executor": "Run",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.qodana",
-    "ts.external.directory.path": "/home/raul/IDEs/WebStorm-241.15989.105/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;manufacturer&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/raul/Environment/Vue/Supply-Chain/client/package.json&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.client.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.server.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/raul/IDEs/WebStorm-241.15989.105/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="QodanaCloudProjectLink">
     <option name="lastReportId" value="nJrnV" />
     <option name="linkedProjectId" value="p0q9v" />
@@ -176,6 +169,7 @@
       <workItem from="1716517567573" duration="3998000" />
       <workItem from="1716549901521" duration="766000" />
       <workItem from="1717122631825" duration="6572000" />
+      <workItem from="1717571012872" duration="484000" />
     </task>
     <task id="LOCAL-00001" summary="eslint errors">
       <option name="closed" value="true" />
