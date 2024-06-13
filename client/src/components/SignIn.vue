@@ -66,7 +66,6 @@
 
 <script>
 import AuthenticationService from '../services/AuthenticationService'
-import axios from 'axios'
 
 export default {
   data () {
@@ -83,13 +82,10 @@ export default {
         password: this.password
       })
         .then(response => {
-          const token = response.data.token
-          localStorage.setItem('token', token)
-          axios.defaults.headers.common.Authorization = `Bearer ${token}`
-          this.$router.push({ name: 'manufacturer' })
-          // we will impliment other routes later based on the user role
-          // that will be returned from the server as part of the response
-          // after token verification(decoded user roles)
+          console.log(response)
+          this.$store.commit('setToken', response.data.token)
+          this.$store.commit('setRole', response.data.role)
+          // this.$router.push({ name: 'manufacturer' })
         })
         .catch(error => {
           console.log(error)

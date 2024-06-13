@@ -55,6 +55,7 @@
                 class="form-control"
                 v-model="password"
                 placeholder="Password"
+                autocomplete="new-password"
               />
               <div class="input-group-append">
                 <div class="input-group-text">

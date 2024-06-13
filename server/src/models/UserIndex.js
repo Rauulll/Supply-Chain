@@ -61,9 +61,9 @@ async function findUsers (email, password, res) {
             process.env.jwt_secret, { expiresIn: '364d' }
           )
           res.status(200).json({
-            token
+            token,
+            role: user.role
           })
-          return { token }
         } catch (error) {
           console.log(error)
         }
