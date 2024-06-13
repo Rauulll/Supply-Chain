@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="28f83587-ec6b-47d1-adca-f83170618c31" name="Changes" comment="initializing jwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Manufacturer/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Manufacturer/Products.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/ManufacturerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/ManufacturerService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/ManufacturerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/ManufacturerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/middleware/userAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/middleware/userAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/ManufacturerIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/ManufacturerIndex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +175,7 @@
       <workItem from="1716549901521" duration="766000" />
       <workItem from="1717122631825" duration="6572000" />
       <workItem from="1717571012872" duration="484000" />
+      <workItem from="1718261269183" duration="10204000" />
     </task>
     <task id="LOCAL-00001" summary="eslint errors">
       <option name="closed" value="true" />

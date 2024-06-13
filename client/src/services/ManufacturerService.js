@@ -6,5 +6,15 @@ export default {
   },
   createProduct (product) {
     return Api().post('manufacturer', product)
+  },
+  async getProduct () {
+    return await Api().get('products')
+      .then(response => {
+        console.log(response)
+        return response
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }

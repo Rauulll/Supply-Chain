@@ -12,4 +12,16 @@ async function createProduct (productName, productInformation) {
   }
 }
 
-module.exports = { createProduct }
+async function fetchProduct () {
+  try {
+    const [product] = await db.query(
+      'SELECT * FROM Products ORDER BY Product_Name'
+    )
+    console.log(product)
+    return product
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+module.exports = { createProduct, fetchProduct }

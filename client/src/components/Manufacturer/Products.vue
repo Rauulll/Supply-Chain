@@ -30,14 +30,16 @@
                         <th>Product ID</th>
                         <th>Product Name</th>
                         <th>Product Description</th>
+                        <th>Production Date</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Product 1</td>
-                        <td>Product 1 Description</td>
+                      <tr v-for="product in products" :key="product.id">
+                        <td>{{product.Product_Id}}</td>
+                        <td>{{product.Product_Name}}</td>
+                        <td>{{product.Product_Information}}</td>
+                        <td>{{product.created}}</td>
                         <td>
                           <button type="button" class="btn btn-primary action-btns">Edit</button>
                           <button type="button" class="btn btn-danger action-btns">Delete</button>
@@ -56,7 +58,26 @@
 </template>
 
 <script>
-
+import ManufacturerService from '../../services/ManufacturerService'
+export default {
+  data () {
+    return {
+      products: ''
+    }
+  },
+  mounted () {
+    this.getProducts()
+  },
+  methods: {
+    async getProducts () {
+      await ManufacturerService.getProduct()
+        .then(response => {
+          this.products = response.data
+          console.log(this.products)
+        })
+    }
+  }
+}
 </script>
 
 <style scoped>
